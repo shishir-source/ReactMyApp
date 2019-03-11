@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Sim extends Component {
-  render() {
+const Sim = ({ sims }) =>{
+  const simsList = sims.map( sim => {
     return (
-      <div className="sim">
-        <div>Name: Sim</div>
-        <div>Age: 30</div>
-        <div>belt: Sim</div>
+      <div className="sim" key ={sim.id}>
+      <div>Name: { sim.name }</div>
+      <div>Age: { sim.age }</div>
+      <div>belt: { sim.belt }</div>
       </div>
     );
-  }
+  });
+  return (
+    <div className="sims-list">
+      {simsList}
+    </div>
+  );
 }
 export default Sim
